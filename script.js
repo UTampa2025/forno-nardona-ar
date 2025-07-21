@@ -4,7 +4,7 @@ const scene = document.querySelector('a-scene').object3D;
 
 function loadOven(name) {
   console.log("Loading oven:", name);
-  const url = 'delicate-beijinho-9d6524.netlify.app/${name}.glb'; // <- Replace with your current Netlify site
+  const url = 'profound-belekoy-84e25a.netlify.app/${name}.glb'; // <- Replace with your current Netlify site
   loader.load(
     url,
     function (gltf) {
@@ -60,7 +60,7 @@ function changeOvenColor(colorHex) {
   });
 }
 colorHex ({
-  if (oven) return;
+  if (oven);
   oven.traverse((node) => {
     if (node.isMesh && node.material) {
       node.material.color.set(colorHex);

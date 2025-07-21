@@ -4,7 +4,7 @@ const scene = document.querySelector('a-scene').object3D;
 
 function loadOven(name) {
   console.log("Loading oven:", name);
-  const url = 'unrivaled-macaron-a4ce3c/${name}.glb`; // <- Replace with your current Netlify site
+  const url = 'resilient-dasik-605b86.netlify.app/${name}.glb'; // <- Replace with your current Netlify site
   loader.load(
     url,
     function (gltf) {

@@ -4,7 +4,7 @@ const scene = document.querySelector('a-scene').object3D;
 
 function loadOven(name) {
   console.log("Loading oven:", name);
-  const url = 'illustrious-syrniki-4e4a55.netlify.app/${name}.glb'; // <- Replace with your current Netlify site
+  const url = 'ornate-scone-ae4b5d.netlify.app/${name}.glb'; // <- Replace with your current Netlify site
   loader.load(
     url,
     function (gltf) {

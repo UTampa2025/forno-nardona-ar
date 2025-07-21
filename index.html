@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Forno Nardona AR Ovens</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.8thwall.com/web/aframe/8.x.x/aframe.min.js"></script>
+    <script src="https://cdn.8thwall.com/web/aframe/8.x.x/aframe-ar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="controls">
+      <h3>Select Oven Size</h3>
+      <button onclick="loadOven('24Napoli')">24&quot;</button>
+      <button onclick="loadOven('32Napoli')">32&quot;</button>
+      <button onclick="loadOven('40Napoli')">40&quot;</button>
+
+      <h3>Select Color</h3>
+      <button onclick="changeOvenColor('#ffffff')">White</button>
+      <button onclick="changeOvenColor('#000000')">Black</button>
+      <button onclick="changeOvenColor('#b22222')">Red</button>
+    </div>
+
+    <a-scene xr="webxr: true;" embedded arjs="sourceType: webcam;">
+      <a-entity id="oven" position="0 0 0" scale="1 1 1"></a-entity>
+      <a-camera-static></a-camera-static>
+    </a-scene>
+
+    <script src="script.js"></script>
+  </body>
+</html>

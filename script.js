@@ -38,7 +38,6 @@ function changeOvenColor(colorHex) {
   });
 }
 
-}
 
 function changeOvenColor(colorHex) {
   if (!oven) return;

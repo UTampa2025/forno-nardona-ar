@@ -59,7 +59,7 @@ function changeOvenColor(colorHex) {
     }
   });
 }
-colorHex {
+colorHex ({
   if (!oven) return;
   oven.traverse((node) => {
     if (node.isMesh && node.material) {

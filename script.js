@@ -5,7 +5,9 @@ const scene = document.querySelector('a-scene').object3D;
 function loadOven(name) {
   console.log("Loading oven:", name);
  // Replace with your current Netlify site URL if different
-  const url = `wondrous-maamoul-82c357.netlify.app/models/${name}.glb`;
+  const url = `https://genuine-pastelito-87b6ff.netlify.app/models/${name}.glb`;
+  // GLB files are served from the local "models" folder
+  const url = `./models/${name}.glb`;
   loader.load(
     url,
     function (gltf) {
@@ -28,6 +30,9 @@ function loadOven(name) {
     }
   );
 }
+
+function changeOvenColor(colorHex) {
+  if (!oven) return;
 
 function changeOvenColor(colorHex) {
   if (!oven) return;

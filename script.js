@@ -5,7 +5,7 @@ const scene = document.querySelector('a-scene').object3D;
 function loadOven(name) {
   console.log("Loading oven:", name);
  // Replace with your current Netlify site URL if different
-  const url = `https://fluffy-cheesecake-b394e8.netlify.app/${name}.glb`;
+  const url = `https://fluffy-alpaca-ebf82f.netlify.app/${name}.glb`;
   loader.load(
     url,
     function (gltf) {

@@ -2,12 +2,12 @@ let oven = null;
 const loader = new THREE.GLTFLoader();
 const scene = document.querySelector('a-scene').object3D;
 
-function loadOven(name) {
+// expose functions globally for inline onclick handlers
+window.loadOven = function loadOven(name) {
   console.log("Loading oven:", name);
- // load the GLB from the local models directory
-  // GLB files are served from the local "models" folder
+  // load the GLB from the local models directory
   loader.load(
-   `./models/${name}.glb`,
+    `./models/${name}.glb`,
     function (gltf) {
       console.log("✅ Model loaded:", name);
       if (oven) {
@@ -27,12 +27,9 @@ function loadOven(name) {
       console.error("❌ GLB load error:", error);
     }
   );
-}
+};
 
-function changeOvenColor(colorHex) {
-  if (!oven) return;
-
-function changeOvenColor(colorHex) {
+window.changeOvenColor = function changeOvenColor(colorHex) {
   if (!oven) return;
   oven.traverse((node) => {
     if (node.isMesh && node.material) {
@@ -41,5 +38,4 @@ function changeOvenColor(colorHex) {
     }
   });
 }
-
-
+};

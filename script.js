@@ -5,10 +5,12 @@ const scene = document.querySelector('a-scene').object3D;
 // expose functions globally for inline onclick handlers
 window.loadOven = function loadOven(name) {
   console.log("Loading oven:", name);
-  // load the GLB from the local models directory
+ // allow callers to omit the .glb extension
+  const file = name.endsWith('.glb') ? name : `${name}.glb`;
+   // load the GLB from the local models directory
   loader.load(
-    `./models/${name}.glb`,
-    function (gltf) {
+     `./models/${file}`,
+     function (gltf) {
       console.log("✅ Model loaded:", name);
       if (oven) {
         scene.remove(oven);

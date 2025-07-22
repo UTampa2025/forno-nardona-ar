@@ -1,6 +1,6 @@
 let oven = null;
 const loader = new THREE.GLTFLoader();
-const scene = document.querySelector('a-scene').object3D;
+const sceneEl = document.querySelector('a-scene');
 
 // expose functions globally for inline onclick handlers
 window.loadOven = function loadOven(name) {
@@ -13,7 +13,7 @@ window.loadOven = function loadOven(name) {
      function (gltf) {
       console.log("✅ Model loaded:", name);
       if (oven) {
-        scene.remove(oven);
+          sceneEl.object3D.remove(oven);
         oven.traverse((obj) => {
           if (obj.material) obj.material.dispose();
           if (obj.geometry) obj.geometry.dispose();
@@ -22,7 +22,7 @@ window.loadOven = function loadOven(name) {
       oven = gltf.scene;
       oven.scale.set(1, 1, 1);
       oven.position.set(0, 0, -1);
-      scene.add(oven);
+      sceneEl.object3D.add(oven);
     },
     undefined,
     function (error) {

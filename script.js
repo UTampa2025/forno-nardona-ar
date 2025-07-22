@@ -4,9 +4,19 @@ const sceneEl = document.querySelector('a-scene');
 
 // expose functions globally for inline onclick handlers
 window.loadOven = function loadOven(name) {
+if (!sceneEl.hasLoaded) {
+    // wait until the scene has finished initializing
+    sceneEl.addEventListener(
+      "loaded",
+      () => window.loadOven(name),
+      { once: true }
+    );
+    return;
+  }
+   
   console.log("Loading oven:", name);
  // allow callers to omit the .glb extension
-  const file = name.endsWith('.glb') ? name : `${name}.glb`;
+  const file = name.endsWith(".glb") ? name : `${name}.glb`;
    // load the GLB from the local models directory
   loader.load(
      `./models/${file}`,

@@ -4,12 +4,10 @@ const scene = document.querySelector('a-scene').object3D;
 
 function loadOven(name) {
   console.log("Loading oven:", name);
- // Replace with your current Netlify site URL if different
-  const url = `https://genuine-pastelito-87b6ff.netlify.app/models/${name}.glb`;
+ // load the GLB from the local models directory
   // GLB files are served from the local "models" folder
-  const url = `./models/${name}.glb`;
   loader.load(
-    url,
+   `./models/${name}.glb`,
     function (gltf) {
       console.log("✅ Model loaded:", name);
       if (oven) {

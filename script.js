@@ -5,7 +5,7 @@ const scene = document.querySelector('a-scene').object3D;
 function loadOven(name) {
   console.log("Loading oven:", name);
  // Replace with your current Netlify site URL if different
-  const url = `https://poetic-faun-6a50b3.netlify.app/${name}.glb`;
+  const url = `wondrous-maamoul-82c357.netlify.app/models/${name}.glb`;
   loader.load(
     url,
     function (gltf) {

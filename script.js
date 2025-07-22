@@ -4,7 +4,8 @@ const scene = document.querySelector('a-scene').object3D;
 
 function loadOven(name) {
   console.log("Loading oven:", name);
-  const url = 'https://fluffy-cheesecake-b394e8.netlify.app/${name}.glb'; // <- Replace with your current Netlify site
+ // Replace with your current Netlify site URL if different
+  const url = `https://fluffy-cheesecake-b394e8.netlify.app/${name}.glb`;
   loader.load(
     url,
     function (gltf) {
@@ -37,13 +38,5 @@ function changeOvenColor(colorHex) {
     }
   });
 }
-colorHex ({
-  if (oven);
-  oven.traverse((node) => {
-    if (node.isMesh && node.material) {
-      node.material.color.set(colorHex);
-      node.material.needsUpdate = true;
-    }
-  });
-}
+
 

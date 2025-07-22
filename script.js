@@ -37,5 +37,4 @@ window.changeOvenColor = function changeOvenColor(colorHex) {
       node.material.needsUpdate = true;
     }
   });
-}
 };
